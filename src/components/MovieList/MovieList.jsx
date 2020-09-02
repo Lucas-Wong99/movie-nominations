@@ -2,16 +2,20 @@ import React from "react";
 import MovieListItem from "../MovieListItem/MovieListItem";
 
 export default function MovieList(props) {
-  const results = props.results;
-
-  const movies = results.map((item) => {
-    return <MovieListItem info={item} />;
-  });
-
   return (
-    <div>
+    <div className="movie-search-results">
       <h2>Results</h2>
-      {movies}
+      {props.results !== undefined &&
+        props.results.map((item) => {
+          return (
+            <MovieListItem
+              title={item.Title}
+              year={item.Year}
+              poster={item.Poster}
+              key={item.imdbID}
+            />
+          );
+        })}
     </div>
   );
 }

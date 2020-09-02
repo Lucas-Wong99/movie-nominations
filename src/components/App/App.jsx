@@ -12,7 +12,6 @@ function App() {
     axios
       .get(`http://www.omdbapi.com/?s=${term}&apikey=6d6340f8`)
       .then((res) => {
-        console.log(res.data.Search);
         setResults(res.data.Search);
       });
   }, [term]);
@@ -21,7 +20,7 @@ function App() {
     <div className="App">
       <h1>Movie Nominations</h1>
       <SearchBar onSearch={(term) => setTerm(term)} />
-      {/* <MovieList results={results} /> */}
+      <MovieList results={results} />
     </div>
   );
 }

@@ -13,17 +13,15 @@ export default function SearchBar(props) {
   }, [term, onSearch]);
 
   return (
-    <div>
-      <h2>Search Bar</h2>
-      <form action="" onSubmit={(e) => e.preventDefault()}>
-        <input
-          type="text"
-          placeholder="Search Movies"
-          name="search"
-          value={value}
-          onChange={(e) => setValue(e.target.value)}
-        />
-      </form>
-    </div>
+    <form className="search-bar" action="" onSubmit={(e) => e.preventDefault()}>
+      <input
+        type="text"
+        className="input"
+        placeholder="Search Movies"
+        name="search"
+        value={value}
+        onChange={(e) => setValue(e.target.value)}
+      />
+    </form>
   );
 }

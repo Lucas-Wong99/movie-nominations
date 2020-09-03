@@ -1,0 +1,16 @@
+.header {
+  margin-left: 15%;
+  h1 {
+    margin: 10px;
+    font-size: 40px;
+  }
+  .search-bar {
+    .input {
+      height: 30px;
+      width: 300px;
+      padding: 10px;
+      font-size: 20px;
+      outline: none;
+    }
+  }
+}

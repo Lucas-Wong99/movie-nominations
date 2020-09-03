@@ -1,7 +1,8 @@
 import React from "react";
+
 import MovieListItem from "../MovieListItem/MovieListItem";
 
-export default function MovieList({ results, term }) {
+export default function MovieList({ results, term, add, action }) {
   return (
     <article className="movie-item-container">
       <h2>Search Results for "{term}"</h2>
@@ -10,10 +11,13 @@ export default function MovieList({ results, term }) {
           results.map((item) => {
             return (
               <MovieListItem
+                key={item.imdbID}
+                id={item.imdbID}
                 title={item.Title}
                 year={item.Year}
                 poster={item.Poster}
-                key={item.imdbID}
+                add={add}
+                action={action}
               />
             );
           })}

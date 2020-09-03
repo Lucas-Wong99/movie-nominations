@@ -13,45 +13,8 @@ body {
   .App {
     display: flex;
     flex-direction: column;
-    .header {
-      margin-left: 15%;
-      h1 {
-        margin: 10px;
-        font-size: 40px;
-      }
-      .search-bar {
-        .input {
-          height: 30px;
-          width: 300px;
-          padding: 10px;
-          font-size: 20px;
-        }
-      }
-    }
+    @import "_header";
 
-    .movie-containers {
-      display: flex;
-      .movie-item-container {
-        border: solid 1px black;
-        height: 80vh;
-        width: 48vw;
-        margin: 15px;
-        overflow: auto;
-
-        .list {
-          display: flex;
-          justify-content: center;
-          flex-wrap: wrap;
-          .movie-item {
-            border: solid 1px black;
-            width: 30%;
-            margin: 10px;
-            img {
-              height: 230px;
-            }
-          }
-        }
-      }
-    }
+    @import "_movieList";
   }
 }

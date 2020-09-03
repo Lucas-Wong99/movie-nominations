@@ -1,21 +1,26 @@
 import React from "react";
 import MovieListItem from "../MovieListItem/MovieListItem";
 
-export default function MovieList(props) {
+export default function NominatedList({ nominatedItems, action, remove }) {
   return (
     <article className="movie-item-container">
       <h2>Nominated Movies</h2>
-      {props.results !== undefined &&
-        props.results.map((item) => {
-          return (
-            <MovieListItem
-              title={item.Title}
-              year={item.Year}
-              poster={item.Poster}
-              key={item.imdbID}
-            />
-          );
-        })}
+      <div className="list">
+        {nominatedItems !== undefined &&
+          nominatedItems.map((item) => {
+            return (
+              <MovieListItem
+                key={item.imdbID}
+                id={item.imdbID}
+                title={item.Title}
+                year={item.Year}
+                poster={item.Poster}
+                action={action}
+                remove={remove}
+              />
+            );
+          })}
+      </div>
     </article>
   );
 }

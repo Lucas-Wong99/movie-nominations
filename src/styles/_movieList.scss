@@ -1,0 +1,24 @@
+.movie-containers {
+  display: flex;
+  .movie-item-container {
+    border: solid 1px black;
+    height: 80vh;
+    width: 48vw;
+    margin: 15px;
+    overflow: auto;
+
+    .list {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      .movie-item {
+        border: solid 1px black;
+        width: 30%;
+        margin: 10px;
+        img {
+          height: 230px;
+        }
+      }
+    }
+  }
+}

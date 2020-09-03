@@ -10,7 +10,7 @@ import "../../styles/app.scss";
 function App() {
   const [term, setTerm] = useState("");
   const [results, setResults] = useState([]);
-  const [nominated, setNominted] = useState([]);
+  const [nominated, setNominated] = useState([]);
 
   useEffect(() => {
     axios
@@ -20,6 +20,24 @@ function App() {
       });
   }, [term]);
 
+  const addMovie = (obj) => {
+    let newArray = [];
+    newArray = [...nominated];
+    newArray.push(obj);
+    setNominated(newArray);
+  };
+
+  const removeMovie = (id) => {
+    const filteredArray = [...nominated].filter((item) => {
+      if (item.imdbID !== id) {
+        return item;
+      } else {
+        return null;
+      }
+    });
+    setNominated(filteredArray);
+  };
+
   return (
     <main className="App">
       <section className="header">
@@ -27,8 +45,17 @@ function App() {
         <SearchBar onSearch={(term) => setTerm(term)} />
       </section>
       <section className="movie-containers">
-        <MovieList results={results} term={term} />
-        <NominatedList />
+        <MovieList
+          results={results}
+          term={term}
+          add={addMovie}
+          action="Add to Nominate"
+        />
+        <NominatedList
+          nominatedItems={nominated}
+          remove={removeMovie}
+          action="Remove"
+        />
       </section>
     </main>
   );

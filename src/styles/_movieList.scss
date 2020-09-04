@@ -1,22 +1,54 @@
 .movie-containers {
   display: flex;
   .movie-item-container {
-    border: solid 1px black;
-    height: 80vh;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    height: 78vh;
     width: 48vw;
     margin: 15px;
+    padding: 10px;
     overflow: auto;
+
+    h2 {
+      font-family: "Paytone One", sans-serif;
+    }
 
     .list {
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
+
       .movie-item {
-        border: solid 1px black;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: darkgray;
         width: 30%;
         margin: 10px;
+
         img {
           height: 230px;
+          width: 150px;
+          margin: 10px;
+          border-radius: 5px;
+        }
+
+        h4 {
+          width: auto;
+          margin: 0 10px 0 10px;
+          font-family: "Rambla", sans-serif;
+        }
+
+        p {
+          font-family: "Rambla", sans-serif;
+        }
+
+        button {
+          border: none;
+          background-color: white;
+          margin: 10px;
+          cursor: pointer;
+          outline: none;
         }
       }
     }

@@ -17,7 +17,7 @@ export default function SearchBar(props) {
       <input
         type="text"
         className="input"
-        placeholder="Search Movies"
+        placeholder="Search Movies Titles"
         name="search"
         value={value}
         onChange={(e) => setValue(e.target.value)}

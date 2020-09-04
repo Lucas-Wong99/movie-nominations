@@ -11,8 +11,8 @@ export default function MovieListItem({
 }) {
   return (
     <div className="movie-item">
-      <h4>{title}</h4>
       <img src={poster} alt="Movie Img" />
+      <h4>{title}</h4>
       <p>{year}</p>
       {add !== undefined && (
         <button

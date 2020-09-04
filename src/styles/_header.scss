@@ -1,11 +1,17 @@
 .header {
   margin-left: 15%;
   h1 {
+    height: 65px;
     margin: 10px;
-    font-size: 40px;
+    color: white;
+    font-family: "Paytone One", sans-serif;
+    font-size: 50px;
   }
   .search-bar {
     .input {
+      background-color: whitesmoke;
+      border: none;
+      border-radius: 10px;
       height: 30px;
       width: 300px;
       padding: 10px;

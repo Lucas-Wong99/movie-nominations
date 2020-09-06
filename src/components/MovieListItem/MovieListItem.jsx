@@ -10,10 +10,10 @@ export default function MovieListItem({
   add,
   remove,
   id,
-  check
+  disabled
 }) {
   let itemClass = classNames("", {
-    "button-disabled": check
+    "button-disabled": disabled
   });
 
   return (

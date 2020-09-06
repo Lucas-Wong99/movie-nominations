@@ -1,3 +1,5 @@
+@import "helpers";
+
 .movie-containers {
   display: flex;
   .movie-item-container {
@@ -61,30 +63,11 @@
         }
 
         button {
-          display: inline-block;
-          transition: all 0.4s ease-in-out 0s;
-          border: none;
-          border-radius: 5px;
-          margin: 10px;
-          padding: 10px;
-          background-color: whitesmoke;
-          cursor: pointer;
-          color: black;
-          outline: none;
-          font-family: "Rambla", sans-serif;
+          @include buttonStyling();
         }
 
         .button-disabled {
-          display: inline-block;
-          transition: all 0.4s ease-in-out 0s;
-          border: none;
-          border-radius: 5px;
-          margin: 10px;
-          padding: 10px;
-          background-color: whitesmoke;
-          color: black;
-          outline: none;
-          font-family: "Rambla", sans-serif;
+          @include buttonStyling();
           text-decoration: line-through;
           cursor: not-allowed;
           pointer-events: none;

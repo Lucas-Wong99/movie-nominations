@@ -14,7 +14,7 @@ export default function App() {
     nominated,
     setTerm,
     results,
-    max,
+    maxNominations,
     imdbArr,
     addMovie,
     removeMovie
@@ -33,12 +33,13 @@ export default function App() {
           add={addMovie}
           action="Add to Nominate"
           imdbArr={imdbArr}
+          max={maxNominations}
         />
         <NominatedList
           nominatedItems={nominated}
           remove={removeMovie}
           action="Remove"
-          max={max}
+          max={maxNominations}
         />
       </section>
     </main>

@@ -10,7 +10,22 @@
     overflow: auto;
 
     h2 {
+      color: #2c2220;
       font-family: "Paytone One", sans-serif;
+    }
+    .nom-header {
+      display: flex;
+      align-items: center;
+
+      .max-noms {
+        border-radius: 10px;
+        margin-top: 0;
+        margin-left: 50px;
+        padding: 10px;
+        background-color: red;
+        text-transform: uppercase;
+        font-family: "Paytone One", sans-serif;
+      }
     }
 
     .list {
@@ -22,33 +37,47 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        background-color: darkgray;
-        width: 30%;
         margin: 10px;
+        width: 30%;
+        border-radius: 10px;
+        background-color: #715e5d;
 
         img {
           height: 230px;
-          width: 150px;
+          max-width: 160px;
           margin: 10px;
           border-radius: 5px;
         }
 
         h4 {
-          width: auto;
           margin: 0 10px 0 10px;
           font-family: "Rambla", sans-serif;
+          color: white;
         }
 
         p {
           font-family: "Rambla", sans-serif;
+          color: white;
         }
 
         button {
+          display: inline-block;
+          transition: all 0.4s ease-in-out 0s;
           border: none;
-          background-color: white;
+          border-radius: 5px;
           margin: 10px;
+          padding: 10px;
+          background-color: whitesmoke;
           cursor: pointer;
+          color: black;
           outline: none;
+          font-family: "Rambla", sans-serif;
+        }
+
+        button:hover {
+          box-shadow: 10px 45px -15px rgba(0, 0, 0, 0.57);
+          background-color: #b39492;
+          letter-spacing: 1px;
         }
       }
     }

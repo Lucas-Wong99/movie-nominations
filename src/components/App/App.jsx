@@ -1,47 +1,28 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
+import React from "react";
 
 import MovieList from "../MovieList/MovieList";
 import NominatedList from "../NominatedList/NominatedList";
 import SearchBar from "../SearchBar/SearchBar";
 
+import useApplicationData from "../../hooks/useApplicationData";
+
 import "../../styles/app.scss";
 
-function App() {
-  const [term, setTerm] = useState("");
-  const [results, setResults] = useState([]);
-  const [nominated, setNominated] = useState([]);
-
-  useEffect(() => {
-    axios
-      .get(`http://www.omdbapi.com/?s=${term}&apikey=6d6340f8`)
-      .then((res) => {
-        setResults(res.data.Search);
-      });
-  }, [term]);
-
-  const addMovie = (obj) => {
-    let newArray = [];
-    newArray = [...nominated];
-    newArray.push(obj);
-    setNominated(newArray);
-  };
-
-  const removeMovie = (id) => {
-    const filteredArray = [...nominated].filter((item) => {
-      if (item.imdbID !== id) {
-        return item;
-      } else {
-        return null;
-      }
-    });
-    setNominated(filteredArray);
-  };
+export default function App() {
+  const {
+    term,
+    nominated,
+    results,
+    max,
+    setTerm,
+    addMovie,
+    removeMovie
+  } = useApplicationData();
 
   return (
     <main className="App">
       <section className="header">
-        <h1>Movie Nominations</h1>
+        <h1>The Shoppies</h1>
         <SearchBar onSearch={(term) => setTerm(term)} />
       </section>
       <section className="movie-containers">
@@ -55,10 +36,9 @@ function App() {
           nominatedItems={nominated}
           remove={removeMovie}
           action="Remove"
+          max={max}
         />
       </section>
     </main>
   );
 }
-
-export default App;

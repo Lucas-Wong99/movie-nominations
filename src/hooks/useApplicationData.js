@@ -5,6 +5,7 @@ const useApplicationData = () => {
   const [term, setTerm] = useState("");
   const [results, setResults] = useState([]);
   const [nominated, setNominated] = useState([]);
+  const [imdbArr, setIMDBArr] = useState([]);
   const [max, setMax] = useState(false);
 
   useEffect(() => {
@@ -13,6 +14,10 @@ const useApplicationData = () => {
     } else {
       setMax(false);
     }
+    const imdbList = nominated.map((item) => {
+      return item.imdbID;
+    });
+    setIMDBArr(imdbList);
   }, [nominated]);
 
   useEffect(() => {
@@ -49,6 +54,7 @@ const useApplicationData = () => {
     setTerm,
     results,
     max,
+    imdbArr,
     addMovie,
     removeMovie
   };

@@ -74,6 +74,22 @@
           font-family: "Rambla", sans-serif;
         }
 
+        .button-disabled {
+          display: inline-block;
+          transition: all 0.4s ease-in-out 0s;
+          border: none;
+          border-radius: 5px;
+          margin: 10px;
+          padding: 10px;
+          background-color: whitesmoke;
+          color: black;
+          outline: none;
+          font-family: "Rambla", sans-serif;
+          text-decoration: line-through;
+          cursor: not-allowed;
+          pointer-events: none;
+        }
+
         button:hover {
           box-shadow: 10px 45px -15px rgba(0, 0, 0, 0.57);
           background-color: #b39492;

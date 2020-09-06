@@ -1,5 +1,7 @@
 import React from "react";
 
+import classNames from "classnames";
+
 export default function MovieListItem({
   title,
   year,
@@ -7,8 +9,13 @@ export default function MovieListItem({
   action,
   add,
   remove,
-  id
+  id,
+  check
 }) {
+  let itemClass = classNames("", {
+    "button-disabled": check
+  });
+
   return (
     <div className="movie-item">
       <img src={poster} alt="Movie Img" />
@@ -16,6 +23,7 @@ export default function MovieListItem({
       <p>{year}</p>
       {add !== undefined && (
         <button
+          className={itemClass}
           onClick={() =>
             add({ Title: title, Year: year, Poster: poster, imdbID: id })
           }

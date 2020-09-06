@@ -15,6 +15,7 @@ export default function App() {
     setTerm,
     results,
     max,
+    imdbArr,
     addMovie,
     removeMovie
   } = useApplicationData();
@@ -31,6 +32,7 @@ export default function App() {
           term={term}
           add={addMovie}
           action="Add to Nominate"
+          imdbArr={imdbArr}
         />
         <NominatedList
           nominatedItems={nominated}

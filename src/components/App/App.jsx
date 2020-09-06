@@ -12,9 +12,9 @@ export default function App() {
   const {
     term,
     nominated,
+    setTerm,
     results,
     max,
-    setTerm,
     addMovie,
     removeMovie
   } = useApplicationData();

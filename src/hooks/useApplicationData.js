@@ -17,7 +17,7 @@ const useApplicationData = () => {
 
   useEffect(() => {
     axios
-      .get(`http://www.omdbapi.com/?s=${term}&type=movies&apikey=6d6340f8`)
+      .get(`http://www.omdbapi.com/?s=${term}&type=movie&apikey=6d6340f8`)
       .then((res) => {
         setResults(res.data.Search);
       });
@@ -46,7 +46,6 @@ const useApplicationData = () => {
   return {
     term,
     nominated,
-    setTerm,
     setTerm,
     results,
     max,

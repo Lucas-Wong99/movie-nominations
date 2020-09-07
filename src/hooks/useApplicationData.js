@@ -26,11 +26,9 @@ const useApplicationData = () => {
 
   //Sends a get request and sets the result array to the first 10 movies.
   useEffect(() => {
-    axios
-      .get(`http://www.omdbapi.com/?s=${term}&type=movie&apikey=6d6340f8`)
-      .then((res) => {
-        setResults(res.data.Search);
-      });
+    axios.get(`/?s=${term}&type=movie&apikey=6d6340f8`).then((res) => {
+      setResults(res.data.Search);
+    });
   }, [term]);
 
   const addMovie = (obj) => {

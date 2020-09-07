@@ -16,6 +16,11 @@ export default function MovieList({
       <div className="list">
         {results !== undefined &&
           results.map((item) => {
+            /**
+             * Checks if each movie has been either already nominated or if the maxNominations
+             * is true. If either is true then a disabled prop is added, which will disable
+             * the add button or else the button is active.
+             */
             if (imdbArr.includes(item.imdbID) || max) {
               return (
                 <MovieListItem

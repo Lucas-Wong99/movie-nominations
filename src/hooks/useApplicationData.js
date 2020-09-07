@@ -8,6 +8,10 @@ const useApplicationData = () => {
   const [imdbArr, setIMDBArr] = useState([]);
   const [maxNominations, setMaxNominations] = useState(false);
 
+  /**
+   * Use effect to determine if the max nominations are true and the imdbID values of
+   * each movie that has been nominated
+   */
   useEffect(() => {
     if (nominated.length === 5) {
       setMaxNominations(true);
@@ -20,6 +24,7 @@ const useApplicationData = () => {
     setIMDBArr(imdbList);
   }, [nominated]);
 
+  //Sends a get request and sets the result array to the first 10 movies.
   useEffect(() => {
     axios
       .get(`http://www.omdbapi.com/?s=${term}&type=movie&apikey=6d6340f8`)

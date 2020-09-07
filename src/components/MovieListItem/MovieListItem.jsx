@@ -12,6 +12,7 @@ export default function MovieListItem({
   id,
   disabled
 }) {
+  //Adds a class of button-disabled to the button if disabled is truthy
   let itemClass = classNames("", {
     "button-disabled": disabled
   });
@@ -21,6 +22,7 @@ export default function MovieListItem({
       <img src={poster} alt="Movie Img" />
       <h4>{title}</h4>
       <p>{year}</p>
+      {/* Adds a remove button or an add button depending on ehich is defined */}
       {add !== undefined && (
         <button
           className={itemClass}
